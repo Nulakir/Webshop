@@ -1,0 +1,189 @@
+/**
+ * Get AllProducts API
+ */
+
+
+//Producten laden uit de database
+function getAllProducts(type, url, callback) {
+    console.log("getAllproducts " + type + " " + url);
+
+    var xHttp = new XMLHttpRequest();
+    xHttp.onreadystatechange = function () {
+        if (xHttp.readyState == XMLHttpRequest.DONE) {
+            if (xHttp.status == 200 || xHttp.status == 201) {
+                var response = JSON.parse(xHttp.response);
+                console.log(response);
+                callback(response);
+                // succes
+            } else {
+                // failed
+            }
+        }
+    };
+    xHttp.onerror = function () {
+        // failed
+    };
+    xHttp.open(type, url, true);
+    xHttp.setRequestHeader('Content-Type', 'application/json');
+    xHttp.send();
+
+}
+
+function getProduct(id) {
+    getAllProducts("GET", "api/products/" + id, showPageProductInfo);
+}
+
+/**
+products.forEach(function (value) {
+    console.log(value.name);
+});
+*/
+
+function showProductsListPage() {
+    getAllProducts("GET", "api/products", showProductsP);
+}
+
+function showProductsP(products) {
+    var productsP = document.getElementById("popular-products");
+
+    productsP.innerHTML = "";
+    products.forEach(function (product) {
+        console.log("product: " + product.id + ", " + product.name);
+        productsP.innerHTML +=
+            "<div class='product' id='" + product.id + "'>" +
+            product.name + " " +
+            "<p>€" + product.price + "</p>" + "</div>";
+    });
+
+
+
+}
+
+function newsLetterDB() {
+    var address = document.getElementById("email-input").value;
+    console.log(address);
+    var xHttp = new XMLHttpRequest();
+    xHttp.onreadystatechange = function () {
+        if (xHttp.readyState == XMLHttpRequest.DONE) {
+            if (xHttp.status == 200 || xHttp.status == 201) {
+                // var response = JSON.parse(xHttp.response);
+                //console.log(response);
+                // callback(response);
+                // succes
+                //emailAPICorrect()
+                alert("jippoie");
+            } else {
+                // failed
+                alert('Database error');
+            }
+        }
+    };
+    xHttp.onerror = function () {
+        // failed
+        alert('Database error');
+    };
+    xHttp.open('POST', 'api/newsletter', true);
+    xHttp.setRequestHeader('Content-Type', 'application/json');
+    var input = JSON.stringify({
+        email: address
+    });
+    xHttp.send(input);
+}
+
+function emailAPICorrect() {
+    document.getElementById("emailFalse").style.display = 'none';
+    document.getElementById("emailCopy").style.display = 'none';
+    document.getElementById("emailCorrect").style.display = 'block';
+}
+
+/**
+ * Van pagina veranderen als op een knop gedrukt wordt.
+ */
+
+//Buttton action
+function addButtonActions() {
+    var overOnsButton = document.getElementById('button-overons');
+    var homeButton = document.getElementById('button-home');
+    var productInfopButton = document.getElementById('page-infop');
+    var newsLetterButton = document.getElementById('email-check');
+
+    overOnsButton.addEventListener("click", function () {
+        showOverOnsPage();
+    });
+    homeButton.addEventListener("click", function () {
+        showHomePage();
+    });
+    productInfopButton.addEventListener("click", function () {
+        showHomePage();
+    });
+    document.getElementById('popular-products').addEventListener("click", function (event) {
+        clickOnProduct(event);
+    });
+    newsLetterButton.addEventListener("click", function () {
+        newsLetterDB();
+    });
+
+}
+/**
+ * het handelen van het klikken van een regel coke bs lijst product
+ */
+function clickOnProduct(event) {
+    console.info("clickOnProduct");
+    console.info('geklikt op: ', event.target.id);
+
+    if (event.target.id) {
+        var gekliktOpProduct = document.getElementById(event.target.id);
+        if (gekliktOpProduct) {
+            console.info("geklikt succes" + event.target.id);
+            getProduct(event.target.id);
+        }
+    }
+}
+
+
+
+// hide alle pagina's
+function hideAllPages() {
+    var overOnsPage = document.getElementById('page-overons');
+    var homePage = document.getElementById('home');
+    var productInfop = document.getElementById('product-infop');
+    overOnsPage.style.display = 'none';
+    homePage.style.display = 'none';
+    productInfop.style.display = 'none';
+}
+
+
+
+// show home Pagina
+function showHomePage() {
+    var page = document.getElementById('home');
+    hideAllPages();
+    page.style.display = 'block';
+}
+// show over ons Pagina
+function showOverOnsPage() {
+    var page = document.getElementById('page-overons');
+    hideAllPages();
+    page.style.display = 'block';
+}
+//Show Product detail page
+function showPageProductInfo(product) {
+    var page = document.getElementById('product-infop');
+    hideAllPages();
+    page.style.display = 'block';
+
+    console.log("showProductInfoP: " + product);
+
+
+    document.getElementById("product-name").innerHTML = product.name;
+    document.getElementById("product-id").innerHTML = product.id;
+    document.getElementById("product-description").innerHTML = product.description;
+    document.getElementById("product-prijs").innerHTML = product.price;
+
+
+}
+
+// Initialize
+addButtonActions();
+showHomePage();
+showProductsListPage(); 

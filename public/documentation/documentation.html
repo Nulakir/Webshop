@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Documentation t18029</title>
+</head>
+
+<body>
+    <h1>Documentation of current user story (US7)</h1>
+
+    <h3>User Case Diagram</h3>
+    <img src="../img/documentation/UCD-US7.jpg">
+    <h3>Class Diagram</h3>
+    <img src="../img/documentation/CD-US7.jpg">
+    <h3>ERD</h3>
+    <img src="../img/documentation/ERD-US7.jpg">
+    <h3>Test code Fitnesse</h3>
+    <code>
+        |storyboard|browser test                                                                           |<br>
+        |open      |https://ori.clow.nl/~t18029/webshop/                                                   |<br>
+        |click     |id=aanmelden-menu                                                                      |<br>
+        |enter     |Jan                   |as                        |id=voornaam                          |<br>
+        |enter     |Anton                 |as                        |id=achternaam                        |<br>
+        |enter     |PCHoofdstraat         |as                        |id=adres                             |<br>
+        |enter     |54                    |as                        |id=huisnummer                        |<br>
+        |enter     |1326 JA               |as                        |id=postcode                          |<br>
+        |enter     |New York City         |as                        |id=woonplaats                        |<br>
+        |enter     |test@plzwerk.com      |as                        |id=email-input2                      |<br>
+        |click     |id=submit-klantgegevens                                                                |<br>
+        |check     |value of              |id=submitAntwoord         |Bedankt! U bent ingeschreven.        |<br>
+        |ensure    |is not visible on page|U heeft een ongeldigd e-mailadres ingevuld. Probeer het opnieuw.|</code>
+</body>
+
+</html>

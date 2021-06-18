@@ -1,0 +1,312 @@
+/* Main */
+
+body {
+    background-color: rgb(247, 247, 247);
+    display: table;
+}
+
+html, body {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+}
+
+#banner {
+    width: 100%;
+    height: auto;
+}
+
+header {
+    background-color: black;
+    color: white;
+    width: 100%;
+}
+
+@font-face {
+    font-family: "Fierce Brosnan";
+    src: url("fonts/FierceBrosnan.woff2") format("woff2"), url("fonts/FierceBrosnan.woff") format("woff"), url("fonts/FierceBrosnan.ttf") format("truetype"), url("fonts/FierceBrosnan.otf") format("opentype");
+}
+
+@font-face {
+    font-family: "Lato";
+    src: url("fonts/lato.regular.ttf") format("truetype");
+}
+
+@font-face {
+    font-family: "Lato Light";
+    src: url("fonts/lato.light.ttf") format("truetype");
+}
+
+#titel {
+    font-family: "Fierce Brosnan";
+    color: whitesmoke;
+    border-top: solid black 10px;
+    margin: 0;
+    margin-left: 10px;
+}
+
+.first-letter {
+    font-size: 1.5em;
+}
+
+.tekst-lato {
+    font-family: "Lato";
+    font-size: 1.1em;
+}
+
+#info {
+    display: inline-block;
+    background-image: linear-gradient(to bottom right, rgb(170, 170, 170), rgb(133, 76, 76));
+    padding: 20px 20px 20px 20px;
+    text-align: left;
+    width: 35%;
+}
+
+/* Menu */
+
+ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-color: rgb(68, 68, 68);
+    font-weight: bold;
+}
+
+li {
+    float: left;
+}
+
+li a:hover, .dropdown:hover .dropdown-button {
+    background-color: rgb(34, 34, 34);
+}
+
+li a, .dropdown-button {
+    display: block;
+    color: white;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+}
+
+li.dropdown {
+    display: inline-block;
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: rgb(230, 230, 230);
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+    z-index: 1;
+    font-family: "Lato Light";
+}
+
+.dropdown-content a {
+    display: block;
+    text-align: left;
+    color: white;
+    background: rgb(85, 85, 85);
+}
+
+.dropdown-content a:hover {
+    background-color: red;
+    color: white;
+}
+
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+
+/* Footer */
+
+#footer {
+    background-color: black;
+    color: whitesmoke;
+    font-family: Tahoma;
+    display: table-footer-group;
+    width: 100%;
+}
+
+#footer button {
+    border: none;
+    background-color: black;
+    color: whitesmoke;
+}
+
+table {
+    table-layout: fixed;
+    width: 100%;
+    padding-left: 20vw;
+    margin-top: 10px;
+}
+
+.footer-header {
+    font-weight: bold;
+}
+
+.footer-tekst {
+    font-size: 0.9em;
+    text-align: center;
+}
+
+.footer-link {
+    cursor: pointer;
+}
+
+#email-tekst {
+    font-size: 0.9em;
+}
+
+#footer button:hover {
+    color: rgb(211, 211, 211);
+}
+
+.fa {
+    padding: 10px;
+    font-size: 30px;
+    height: 15px;
+    width: 15px;
+    text-align: center;
+    text-decoration: none;
+}
+
+.fa:hover {
+    opacity: 0.7;
+}
+
+.fa-facebook {
+    background: #3B5998;
+    color: white;
+}
+
+.fa-twitter {
+    background: #55ACEE;
+    color: white;
+}
+
+.fa-youtube {
+    background: #bb0000;
+    color: white;
+}
+
+#whitespace {
+    content: "A" !important;
+    display: block !important;
+    margin-bottom: 12em !important;
+}
+
+#schrijf-je-in {
+    font-size: 0.9em;
+}
+
+/* Productbeschrijving */
+
+.product {
+    border: solid black 2px;
+    height: 12em;
+    width: 12em;
+    display: inline-block;
+    margin-right: 2em;
+    font-family: "Lato";
+    cursor: pointer;
+}
+
+.product-category {
+    text-align: center;
+    margin-top: 1.5em;
+    margin-bottom: 3em;
+}
+
+.producten-header {
+    font-family: "Lato";
+    text-align: center;
+    font-size: 1.2em;
+}
+
+#hidden-id {
+    display: none;
+}
+
+.tekst-pb {
+    font-family: "Lato";
+    font-size: 1.1em;
+    margin-left: 5px;
+}
+
+.button-pb {
+    font-family: "Lato";
+    margin-left: 5px;
+    margin-bottom: 5px;
+    font-size: 1em;
+    border: solid black 1px;
+}
+
+.sold-out {
+    height: 160px;
+    width: 160px;
+    transition: transform .3s;
+    margin-top: 15px;
+}
+
+.sold-out:hover {
+    -moz-transform: scale(1.2);
+    -ms-transform: scale(1.2);
+    -webkit-transform: scale(1.2);
+    transform: scale(1.2);
+}
+
+.product-img {
+    height: 110px;
+    width: 110px;
+    transition: transform .3s;
+}
+
+.product-img:hover {
+    -moz-transform: scale(1.2);
+    -ms-transform: scale(1.2);
+    -webkit-transform: scale(1.2);
+    transform: scale(1.2);
+}
+
+.productdetail-img {
+    height: 300px;
+    width: 300px;
+}
+
+/* Aanmelden klant */
+
+#aanmelden-info {
+    font-family: "Lato";
+    font-size: 1.2em;
+    margin-left: 10px;
+}
+
+.label-klantgegevens {
+    float: left;
+    clear: left;
+    width: 100px;
+    text-align: right;
+    font-family: "Lato";
+}
+
+.input-klantgegevens {
+    float: left;
+    margin-left: 10px;
+    border: solid rgb(68, 68, 68) 1px;
+    border-radius: 5px;
+}
+
+#submit-klantgegevens {
+    margin-left: 175px;
+    font-family: "Lato";
+    border: solid black 1px;
+    font-size: 0.9em;
+}
+
+#submitAntwoord {
+    font-family: "Lato";
+    font-size: 1em;
+    margin-left: 10px;
+}

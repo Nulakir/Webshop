@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" type="text/css" href="css/webshop.css">
+    <link rel="icon" href="img/Favicon.png" type="image/x-icon">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <title>Combat Gear Almere</title>
+</head>
+
+<body>
+
+    <!-- Menu -->
+    <header>
+        <h1 id="titel"><span class="first-letter">C</span>ombat <span class="first-letter">G</span>ear &nbsp;<span
+                class="first-letter">A</span>lmere</h1>
+        <ul id="menu-ul" class="tekst-lato">
+            <li id="home-menu"><a href="#">Home</a></li>
+            <li id="bokshandschoenen" class="menubalk-style"><a href="#">Bokshandschoenen</a></li>
+            <li id="boksballen" class="menubalk-style"><a href="#">Boksballen</a></li>
+            <li id="dropdown-pakken" class="dropdown">
+                <a href="javascript:void(0)" class="dropdown-button">Pakken</a>
+                <div class="dropdown-content">
+                    <a href="javascript://">Karate pakken</a>
+                    <a href="#">Judo pakken</a>
+                    <a href="#">Kung Fu pakken</a>
+                    <a href="#">Sumo pakken</a>
+                </div>
+            </li>
+            <li class="dropdown">
+                <a href="javascript:void(0)" class="dropdown-button">Kleding</a>
+                <div class="dropdown-content">
+                    <a href="#">T-shirts</a>
+                    <a href="#">Hoodies</a>
+                    <a href="#">Sportbroeken</a>
+                </div>
+            </li>
+            <li id="aanmelden-menu" class="menubalk-style"><a href="#">Aanmelden</a></li>
+        </ul>
+    </header>
+    <br>
+
+    <main>
+        <!-- Home page -->
+        <div id="home" class="page">
+            <img id="banner" src="img/bannerfixedindex.png" alt="Banner">
+
+            <div>
+                <p class="producten-header">Populaire producten</p>
+                <div id="popular-products" class="product-category">
+                </div>
+            </div>
+
+            <div id="new-products" class="product-category">
+                <p class="producten-header">Nieuwe producten</p>
+                <div class="product"><img src="img/products/sold-out.png" class="sold-out" alt="sold out"></div>
+                <div class="product"><img src="img/products/sold-out.png" class="sold-out" alt="sold out"></div>
+                <div class="product"><img src="img/products/sold-out.png" class="sold-out" alt="sold out"></div>
+                <div class="product"><img src="img/products/sold-out.png" class="sold-out" alt="sold out"></div>
+                <div class="product"><img src="img/products/sold-out.png" class="sold-out" alt="sold out"></div>
+            </div>
+        </div>
+
+        <!--Info page-->
+        <div id="product-infop" class="page">
+            <p id="image-pb"></p>
+            <p class="tekst-pb">Product: <span id="product-name"></span></p>
+            <p class="tekst-pb">Product-beschrijving: <span id="product-description"></span></p>
+            <p class="tekst-pb">Prijs: €<span id="product-prijs"></span></p>
+            <div id="hidden-id">
+                <p class="tekst-pb">ID: <span id="product-id"></span></p>
+            </div>
+            <button id="page-infop" class="button-pb">Terug naar home pagina</button>
+        </div>
+
+        <!-- About page -->
+        <div class="page" id="page-overons">
+            <section id="info" class="tekst-lato">
+                <h3>Wat is Combat Gear Almere?</h3>
+                <span>Combat Gear Almere, ofwel CGA, is een studentenbedrijf
+                    opgericht in november 2018 door Mike Ebbe, Julian Freeke
+                    en Shivam Jawahir (t18029). CGA is gespecialiseerd op het
+                    gebied van vechtsportuitrusting. CGA verkoopt onder andere
+                    bokshandschoenen, bokszakken en -ballen, judo- en karatepakken,
+                    scheenbeschermers, bandages(handwraps) en nog veel meer.
+                    Wij werken er bij CGA hard aan om te klant zo blij mogelijk te maken</span>
+            </section>
+            <br id="whitespace">
+        </div>
+
+        <!--Aanmeld Page-->
+        <div class="page" id="page-aanmelden">
+            <form action="#">
+                <p id="aanmelden-info">Vul uw klantgegevens in om u aan te melden op de site.</p>
+                <label for="voornaam" class="label-klantgegevens">Voornaam: </label>
+                <input id="voornaam" class="input-klantgegevens"><br><br>
+                <label for="achternaam" class="label-klantgegevens">Achternaam: </label>
+                <input id="achternaam" class="input-klantgegevens"><br><br>
+                <label for="adres" class="label-klantgegevens">Adres: </label>
+                <input id="adres" class="input-klantgegevens"><br><br>
+                <label for="huisnummer" class="label-klantgegevens">Huisnummer: </label>
+                <input id="huisnummer" class="input-klantgegevens"><br><br>
+                <label for="postcode" class="label-klantgegevens">Postcode: </label>
+                <input id="postcode" class="input-klantgegevens"><br><br>
+                <label for="woonplaats" class="label-klantgegevens">Woonplaats: </label>
+                <input id="woonplaats" class="input-klantgegevens"><br><br>
+                <label for="email-input2" class="label-klantgegevens">E-mailadres: </label>
+                <input id="email-input2" class="input-klantgegevens"><br><br>
+                <button id="submit-klantgegevens">Aanmelden</button>
+                <p id="submitAntwoord"></p>
+            </form>
+        </div>
+
+
+        <div id="footer">
+            <table>
+                <tr>
+                    <td class="footer-header">Algemeen</td>
+                    <td class="footer-header">Contact</td>
+                    <td class="footer-header">Nieuwsbrief</td>
+                </tr>
+                <tr>
+                    <td><button id="button-home" class="footer-link">Home</button></td>
+                    <td><button id="contactgegevens" class="footer-link">Contactgegevens</button></td>
+                    <td>
+                        <!-- Nieuwsbrief -->
+                        <form action="#">
+                            <label for="email-input" id="email-tekst">E-mail: </label>
+                            <input type="email" id="email-input" name="email">
+                            <button id="email-check">Inschrijven</button>
+                        </form>
+                    </td>
+                </tr>
+                <tr>
+                    <td><button id="button-overons" class="footer-link">Over ons</button></td>
+                    <td><button id="social-media" class="footer-link">Social media</button></td>
+                    <td id="schrijf-je-in"><br>Meer nieuws? Schrijf je in voor de nieuwsbrief,<br> of volg ons op
+                        social media!</td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td></td>
+                    <td><a href="#" class="fa fa-facebook"></a>
+                        <a href="https://pics.me.me/sike-nigga-you-thought-11102230.png" class="fa fa-twitter"></a>
+                        <a href="https://www.youtube.com/subscription_center?add_user=PewDiePie" class="fa fa-youtube"></a></td>
+            </table>
+            <p class="footer-tekst">Website gemaakt door: Mike Ebbe, Julian Freeke en Shivam Jawahir</p>
+        </div>
+    </main>
+
+    <script src="js/webshop.js"></script>
+</body>
+
+</html>
